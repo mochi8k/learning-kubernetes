@@ -1,9 +1,9 @@
 apiVersion: apps/v1
-kind: ReplicaSet
+kind: Deployment
 metadata:
-  name: sample-rs
+  name: sample-deployment
 spec:
-  replicas: 1
+  replicas: 3
   selector:
     matchLabels:
       app: sample-app
@@ -17,3 +17,4 @@ spec:
           image: nginx:1.12
           ports:
             - containerPort: 80
+
